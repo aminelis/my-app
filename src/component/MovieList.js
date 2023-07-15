@@ -24,8 +24,6 @@ const MovieList = ({ MovieCards }) => {
         const { movies } = filters;
         return (
           obj.title.toLowerCase().includes(movies.toLowerCase()) ||
-          obj.description.toLowerCase().includes(movies.toLowerCase()) ||
-          obj.posterURL.toLowerCase().includes(movies.toLowerCase()) ||
           obj.rating.toLowerCase().includes(movies.toLowerCase())
         );
       })
