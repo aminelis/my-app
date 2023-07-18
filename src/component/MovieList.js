@@ -51,8 +51,13 @@ const MovieList = ({ MovieCards }) => {
       
         
       
+      
+      </div>
+      <div className="row mt-3" style={{ marginLeft: '20px' }}>
       {filteredMovieCards.map((obj, key) => (
-        <MovieCard obj={obj} key={key} />
+        <div className="col-2" key={key}>
+        <MovieCard obj={obj} />
+      </div>
       ))}
       </div>
     </div>

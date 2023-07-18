@@ -1,7 +1,8 @@
 import './App.css';
 import React, { useState } from 'react';
-import MovieList from './component/MovieList';
-import AddMovie from './component/addMovie';
+import Home from './component/home';
+import Detail from './component/detail';
+import { Routes, Link, Route } from 'react-router-dom';
 
 function App() {
   const [objs, setobjs] = useState([
@@ -21,20 +22,21 @@ function App() {
     }
   ]);
 
-
-  const addMovie = (obj) => {
-    setobjs([ ...objs, obj ]);
-  };
-
   return (
-    <div className="App">
-      
-        <h1>This is the list of what you should do</h1>
+      <div className="App">
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+          </ul>
+        </nav>
+
+        <Routes>
+          <Route path="/" element={<Home objs={objs} setobjs={setobjs} />} />
+          <Route path="/detail/:id" element={<Detail movieData={objs} />} />
+        </Routes>
         
-      
-  
-      <AddMovie handleAdd={addMovie} />
-      <MovieList MovieCards={objs} />
     </div>
   );
 }

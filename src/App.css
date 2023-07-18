@@ -3,7 +3,7 @@
   height: 100vh; /* Set the height to 100% of the viewport height */
   text-align: center;
   background-image: url('/public/Bg.jpg');
-  background-size: cover;
+  background-size: 100% auto; 
   background-position: center;
 }
 
@@ -37,6 +37,7 @@
   margin-right: 10px;
   border-radius: 10px;
 }
+
 
 .list-label {
   font-weight: bold;
